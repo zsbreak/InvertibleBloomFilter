@@ -1,7 +1,11 @@
 package com.zsbreak.InvertibleBloomFilter;
 
 import java.io.UnsupportedEncodingException;
-
+/**
+ * 
+ * @author zsbreak
+ *
+ */
 class Cell {
 
 	private int count;
