@@ -36,24 +36,24 @@ List<Integer>[] decodeResult = b1.decode(res);
 
 ### the result of the benchmark test:
 ###
-		=========benchmark start==========
-		StrataEstimator.encode(): 1.453s, 688231.2456985547 elements/s
-		StrataEstimator.decode(): 0.002s, 5.0E8 elements/s
-		the size of the set diffence:20,the result of estimating:20
-		==========
-		ibf.add(): 0.987s, 1013171.2259371834 elements/s
-		ibf.contains(), existing: 0.335s, 2985074.6268656715 elements/s
-		ibf.subtract()0.0s, Infinity elements/s
-		ibf.decode()0.001s, 1.0E9 elements/s
-		=========benchmark end==========
-		23583:23583,1337:1337
-		23586:23586,8278:8278
-		34145:34145,14619:14619
-		37002:37002,15403:15403
-		64612:64612,19001:19001
-		64842:64842,22253:22253
-		66591:66591,29445:29445
-		73243:73243,56447:56447
-		77606:77606,75472:75472
-		80984:80984,94830:94830
-		decode success
+=========benchmark start==========
+StrataEstimator.encode(): 1.453s, 688231.2456985547 elements/s
+StrataEstimator.decode(): 0.002s, 5.0E8 elements/s
+the size of the set diffence:20,the result of estimating:20
+==========
+ibf.add(): 0.987s, 1013171.2259371834 elements/s
+ibf.contains(), existing: 0.335s, 2985074.6268656715 elements/s
+ibf.subtract()0.0s, Infinity elements/s
+ibf.decode()0.001s, 1.0E9 elements/s
+=========benchmark end==========
+23583:23583,1337:1337
+23586:23586,8278:8278
+34145:34145,14619:14619
+37002:37002,15403:15403
+64612:64612,19001:19001
+64842:64842,22253:22253
+66591:66591,29445:29445
+73243:73243,56447:56447
+77606:77606,75472:75472
+80984:80984,94830:94830
+decode success
