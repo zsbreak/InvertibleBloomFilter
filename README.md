@@ -3,24 +3,26 @@ Invertible Bloom Filter-based strata estimator as described by Eppstein et al. i
 
 No extenal dependencies.
 
-##Configuration
+Configuration
 ----------------
 
 ### estimate the size of set difference
-###
+```Java
 		StrataEstimator se1 = new StrataEstimator();
 		StrataEstimator se2 = new StrataEstimator();
+		
 		//the set 1 named s1,and the set 2 named s2
 		se1.encode(s1);
 		se2.encode(s2);
 		int diff = se1.decode(se2);
-
+```
 ### decode the set difference
-###
+```Java
 		//we determined 1.5*diff of the IBF's size
 		//since approximately 1.5*diff cells are required to successfully decode the IBF.
 		InvertibleBloomFilter b1 = new InvertibleBloomFilter((int) (diff * 2));//or 1.5*diff
 		InvertibleBloomFilter b2 = new InvertibleBloomFilter((int) (diff * 2));
+		
 		for (int i = 0; i < TEST_SIZE; i++) {
 			b1.add(s1[i]);
 			b2.add(s2[i]);
@@ -29,11 +31,10 @@ No extenal dependencies.
 		Cell[] res = b1.subtract(b2.getCells());
 
 		// decode the result of the subtract operation
-		long start_decode = System.currentTimeMillis();
 		List<Integer>[] decodeResult = b1.decode(res);
+```
 
-
-### he result of the benchmark test:
+### the result of the benchmark test:
 ###
 		=========benchmark start==========
 		StrataEstimator.encode(): 1.453s, 688231.2456985547 elements/s
