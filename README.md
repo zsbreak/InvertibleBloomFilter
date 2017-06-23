@@ -8,30 +8,30 @@ Configuration
 
 ### estimate the size of set difference
 ```Java
-		StrataEstimator se1 = new StrataEstimator();
-		StrataEstimator se2 = new StrataEstimator();
+StrataEstimator se1 = new StrataEstimator();
+StrataEstimator se2 = new StrataEstimator();
 		
-		//the set 1 named s1,and the set 2 named s2
-		se1.encode(s1);
-		se2.encode(s2);
-		int diff = se1.decode(se2);
+//the set 1 named s1,and the set 2 named s2
+se1.encode(s1);
+se2.encode(s2);
+int diff = se1.decode(se2);
 ```
 ### decode the set difference
 ```Java
-		//we determined 1.5*diff of the IBF's size
-		//since approximately 1.5*diff cells are required to successfully decode the IBF.
-		InvertibleBloomFilter b1 = new InvertibleBloomFilter((int) (diff * 2));//or 1.5*diff
-		InvertibleBloomFilter b2 = new InvertibleBloomFilter((int) (diff * 2));
-		
-		for (int i = 0; i < TEST_SIZE; i++) {
-			b1.add(s1[i]);
-			b2.add(s2[i]);
-		}
-		// subtract invertible bloom filter
-		Cell[] res = b1.subtract(b2.getCells());
+//we determined 1.5*diff of the IBF's size
+//since approximately 1.5*diff cells are required to successfully decode the IBF.
+InvertibleBloomFilter b1 = new InvertibleBloomFilter((int) (diff * 2));//or 1.5*diff
+InvertibleBloomFilter b2 = new InvertibleBloomFilter((int) (diff * 2));
 
-		// decode the result of the subtract operation
-		List<Integer>[] decodeResult = b1.decode(res);
+for (int i = 0; i < TEST_SIZE; i++) {
+	b1.add(s1[i]);
+	b2.add(s2[i]);
+}
+// subtract invertible bloom filter
+Cell[] res = b1.subtract(b2.getCells());
+
+// decode the result of the subtract operation
+List<Integer>[] decodeResult = b1.decode(res);
 ```
 
 ### the result of the benchmark test:
