@@ -35,7 +35,7 @@ List<Integer>[] decodeResult = b1.decode(res);
 ```
 
 ### the result of the benchmark test:
-###
+```
 =========benchmark start==========
 StrataEstimator.encode(): 1.453s, 688231.2456985547 elements/s
 StrataEstimator.decode(): 0.002s, 5.0E8 elements/s
@@ -57,3 +57,4 @@ ibf.decode()0.001s, 1.0E9 elements/s
 77606:77606,75472:75472
 80984:80984,94830:94830
 decode success
+```
